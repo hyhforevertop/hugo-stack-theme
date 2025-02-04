@@ -1,0 +1,12 @@
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+
+.welcome {
+  color: var(--card-text-color-main);
+  background: var(--card-background);
+  box-shadow: var(--shadow-l2);
+  border-radius: 30px;
+  display: inline-block;
+}
+

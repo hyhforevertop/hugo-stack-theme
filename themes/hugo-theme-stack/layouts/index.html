@@ -1,0 +1,53 @@
+{{ define "main" }}
+    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+    {{ $filtered := ($pages | intersect $notHidden) }}
+    {{ $pag := .Paginate ($filtered) }}
+
+
+<!-- 首页欢迎字幅 -->
+<div class="welcome">
+    <p class="ml2" style="font-size: 2rem; text-align: center; font-weight: bold">
+        🌹Welcome To HYH's Blog🌹
+    </p>
+</div>
+<!-- 首页欢迎字幅 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<script>
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml2');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({loop: true})
+        .add({
+            targets: '.ml2 .letter',
+            scale: [4,1],
+            opacity: [0,1],
+            translateZ: 0,
+            easing: "easeOutExpo",
+            duration: 950,
+            delay: (el, i) => 70*i
+        }).add({
+        targets: '.ml2',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
+</script>
+
+
+    <section class="article-list">
+        {{ range $index, $element := $pag.Pages }}
+            {{ partial "article-list/default" . }}
+        {{ end }}
+    </section>
+
+    {{- partial "pagination.html" . -}}
+    {{- partial "footer/footer" . -}}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

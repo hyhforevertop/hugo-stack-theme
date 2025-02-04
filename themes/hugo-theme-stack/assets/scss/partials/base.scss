@@ -1,0 +1,58 @@
+html {
+    font-size: 62.5%;
+    overflow-y: scroll;
+}
+
+* {
+    box-sizing: border-box;
+
+    font-weight: normal;
+}
+
+
+
+body {
+    //background: var(--body-background);
+    margin: 0;
+    font-family: var(--base-font-family);
+    font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-size: 400% 400%;
+    background-image: var(--body-background-animate-color);
+    animation: background-animation 6s infinite;
+}
+
+@keyframes background-animation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+/* scrollbar styles for Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+/**/
+
+/* scrollbar styles for Chromium */
+::-webkit-scrollbar {
+    height: auto;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+/**/
