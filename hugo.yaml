@@ -151,7 +151,6 @@ params:
             id:
     widgets:
         homepage:
-            - type: search
             - type: archives
               params:
                   limit: 5
