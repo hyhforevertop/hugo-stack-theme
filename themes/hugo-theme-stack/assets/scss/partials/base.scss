@@ -21,17 +21,23 @@ body {
 
     background-size: 400% 400%;
     background-image: var(--body-background-animate-color);
-    animation: background-animation 6s infinite;
+    animation: background-animation 6s ease infinite;
 }
 
-@keyframes background-animation{
-    0%{
+@keyframes background-animation {
+    0% {
         background-position: 0% 50%;
     }
-    50%{
-        background-position: 100% 50%;
+    25% {
+        background-position: 25% 50%; /* 更频繁地变动 */
     }
-    100%{
+    50% {
+        background-position: 50% 50%;
+    }
+    75% {
+        background-position: 75% 50%;
+    }
+    100% {
         background-position: 0% 50%;
     }
 }
