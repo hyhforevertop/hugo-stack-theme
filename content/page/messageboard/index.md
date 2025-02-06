@@ -2,13 +2,13 @@
 title: 关于
 description: 这是一个副标题
 date: 2020-09-09
-slug: test-chinese
+slug: messageboard
 menu:
   main:
-    name: 关于
+    name: 留言
     weight: -80
     params:
-      icon: user
+      icon: messages
 ---
 
 ## 正文测试
