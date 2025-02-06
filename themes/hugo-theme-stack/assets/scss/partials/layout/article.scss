@@ -218,10 +218,15 @@
     h4,
     h5,
     h6 {
+        text-decoration: underline;
+        text-underline-offset: 0.3em;
+        text-decoration-thickness: 2px;  /* 可自定义下划线粗细 */
+
         margin-inline-start: calc((var(--card-padding)) * -1);
         padding-inline-start: calc(var(--card-padding) - var(--heading-border-size));
         border-inline-start: var(--heading-border-size) solid var(--accent-color);
         position: relative;
+
 
         a.header-anchor {
             transition: opacity 0.3s ease;
@@ -235,6 +240,8 @@
             &:before {
                 content: "#";
             }
+
+
         }
 
         &:hover,
@@ -261,11 +268,11 @@
         padding: 15px calc(var(--card-padding) - var(--blockquote-border-size));
         background-color: var(--blockquote-background-color);
 
+
         .cite {
             display: block;
             text-align: right;
             font-size: 0.75em;
-
             a {
                 text-decoration: underline;
             }
@@ -329,9 +336,14 @@
     }
 
     .highlight {
-        background-color: var(--pre-background-color);
-        padding: var(--card-padding);
+        max-width: 102% !important;
+
+        background-color: var(--article-code-background-color);
+        padding: 15px;
         position: relative;
+        margin-left: -7px !important;
+        border-radius: 15px;
+        margin-right: -12px;
 
         &:hover {
             .copyCodeButton {
@@ -344,9 +356,10 @@
         }
         pre {
             margin: initial;
-            padding: 0;
+            padding: 10px;
             margin: 0;
             width: auto;
+            background: var(--article-code-background-color);
         }
     }
 
