@@ -1,5 +1,5 @@
 ---
-title: 关于
+title: 留言板
 description: 这是一个副标题
 date: 2020-09-09
 slug: messageboard
@@ -24,5 +24,4 @@ menu:
 > 不告而别的你 就算为了我着想  
 > 这么沉痛的呵护 我怎么能翱翔
 
-
-## 图片
+留言
